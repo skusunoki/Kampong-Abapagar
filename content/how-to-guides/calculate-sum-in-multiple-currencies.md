@@ -1,6 +1,6 @@
 +++
 date = '2025-05-11T11:10:31+08:00'
-draft = true
+draft = false
 title = 'How to Calculate Sum in Multiple Currencies'
 weight = 30
 type = "docs"

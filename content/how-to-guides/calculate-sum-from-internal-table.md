@@ -1,6 +1,6 @@
 +++
 date = '2025-05-11T09:44:32+08:00'
-draft = true
+draft = false
 title = 'How to Calculate Sum From Internal Table'
 
 weight = 20
