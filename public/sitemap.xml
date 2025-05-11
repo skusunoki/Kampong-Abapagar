@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/how-to-guides/calculate-sum-from-internal-table/</loc>
+    <lastmod>2025-05-11T09:44:32+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/how-to-guides/calculate-sum-in-multiple-currencies/</loc>
+    <lastmod>2025-05-11T11:10:31+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-11T10:07:30+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/how-to-guides/</loc>
+    <lastmod>2025-05-11T10:06:41+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>
