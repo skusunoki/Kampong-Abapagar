@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>How to Guides on Kampong-Abapagar Modern ABAP</title>
-    <link>http://localhost:1313/how-to-guides/</link>
+    <link>http://localhost:1313/Kampong-Abapagar/how-to-guides/</link>
     <description>Recent content in How to Guides on Kampong-Abapagar Modern ABAP</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 May 2025 11:10:31 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/how-to-guides/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/Kampong-Abapagar/how-to-guides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Calculate Sum From Internal Table</title>
-      <link>http://localhost:1313/how-to-guides/calculate-sum-from-internal-table/</link>
+      <link>http://localhost:1313/Kampong-Abapagar/how-to-guides/calculate-sum-from-internal-table/</link>
       <pubDate>Sun, 11 May 2025 09:44:32 +0800</pubDate>
-      <guid>http://localhost:1313/how-to-guides/calculate-sum-from-internal-table/</guid>
+      <guid>http://localhost:1313/Kampong-Abapagar/how-to-guides/calculate-sum-from-internal-table/</guid>
       <description>&lt;h2 id=&#34;use-reduce-with-for-r-in-itab-syntax&#34;&gt;Use &lt;code&gt;REDUCE&lt;/code&gt; with &lt;code&gt;FOR r IN itab&lt;/code&gt; syntax&lt;/h2&gt;&#xA;&lt;p&gt;Awesome constructor operator REDUCE can remove loop and clarify the intent of your code to calculate sum from internal table.&lt;/p&gt;&#xA;&lt;h3 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h3&gt;&#xA;&lt;p&gt;It&amp;rsquo;s typical that &lt;code&gt;TYPE&lt;/code&gt; statement defines structure and internal table with multiple fields including key, characteristics, and figures to clarify the intent of business data. In this case, there are the internal table of purchase order item with amount required. Prefix &lt;code&gt;t_&lt;/code&gt; of table type  &lt;code&gt;t_purchase_order_item&lt;/code&gt; is commonly used for table type&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Calculate Sum in Multiple Currencies</title>
-      <link>http://localhost:1313/how-to-guides/calculate-sum-in-multiple-currencies/</link>
+      <link>http://localhost:1313/Kampong-Abapagar/how-to-guides/calculate-sum-in-multiple-currencies/</link>
       <pubDate>Sun, 11 May 2025 11:10:31 +0800</pubDate>
-      <guid>http://localhost:1313/how-to-guides/calculate-sum-in-multiple-currencies/</guid>
+      <guid>http://localhost:1313/Kampong-Abapagar/how-to-guides/calculate-sum-in-multiple-currencies/</guid>
       <description>&lt;h2 id=&#34;use-value-with-for-groups-k-of-r-in-itab-and-reduce-with-in-group-k-syntax&#34;&gt;Use &lt;code&gt;VALUE&lt;/code&gt; with &lt;code&gt;FOR GROUPS k of r IN itab&lt;/code&gt; and &lt;code&gt;REDUCE&lt;/code&gt; with &lt;code&gt;IN GROUP k&lt;/code&gt; syntax&lt;/h2&gt;&#xA;&lt;p&gt;If the internal table contains multiple currencies, the program should calculate the sums for each currency. &lt;code&gt;VALUE&lt;/code&gt; operator is expected to generate new internal table with the currency as the key. &lt;code&gt;REDUCE&lt;/code&gt; operator is expected to generate sum of each currency.&lt;/p&gt;&#xA;&lt;h3 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h3&gt;&#xA;&lt;p&gt;There are two structures and two table types required. The first pair of structure and table is for original data. The second pair is for sum.&lt;/p&gt;</description>
     </item>
   </channel>
