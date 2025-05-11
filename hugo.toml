@@ -6,3 +6,7 @@ title = 'Kampong-Abapagar Modern ABAP'
 proxy = "direct"
 [[module.imports]]
 path = "github.com/google/docsy"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
