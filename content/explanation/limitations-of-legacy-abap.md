@@ -9,7 +9,7 @@ type = "docs"
 
 ## Definition
 
-The term **Legacy ABAP** is ambiguous. In this site, Legacy ABAP refers to obsolete language features, ABAP programmer practices that are no longer necessary in modern toolsets, and entire architectures that have been adopted as a necessary evil. 
+The term **Legacy ABAP** is ambiguous. In this site, Legacy ABAP refers to obsolete language features, ABAP programmer practices that are no longer necessary in modern tool sets, and entire architectures that have been adopted as a necessary evil. 
 
 ## Obsolete language features
 
@@ -32,7 +32,7 @@ Some of the difficulty in SAP projects comes from the persistence of practices t
 
 The writing style is straightforward, prioritizing minimal effort, but the scale of SAP projects is not small. 
 
-- Highly dependent on database table definition and sytem variables like `SY-UNAME` and `SY-DATUM`
+- Highly dependent on database table definition and system variables like `SY-UNAME` and `SY-DATUM`
 - Direct database tables access with `SELECT` queries
 - Procedural design and programming style instead of domain model style
 
