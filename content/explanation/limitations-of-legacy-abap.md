@@ -9,13 +9,13 @@ type = "docs"
 
 ## Definition
 
-The term **Legacy ABAP** is ambiguous. In this site, Legacy ABAP refers to obsolete language features, ABAP programmer practices that are no longer necessary in modern tool sets, and entire architectures that have been adopted as a necessary evil. 
+The term **Legacy ABAP** is ambiguous. In this site, Legacy ABAP refers to obsolete language features, ABAP programmer practices that are no longer necessary in modern tool sets, and architectures that have been adopted as a necessary evil. 
 
 ## Obsolete language features
 
 The ABAP language is also changing with the times, and older language features are becoming less compatible.
 
-- Obsolete modularization technics like subroutines, and function modules
+- Obsolete technics to make complex programs to separate parts (Modularization) like subroutines, and function modules
 - Obsolete calls like `CALL TRANSACTION`, `CALL METHOD`, and `CALL DIALOG`
 - Internal table definition with `WITH HEADER LINE`
 
@@ -30,10 +30,11 @@ Some of the difficulty in SAP projects comes from the persistence of practices t
 
 ## Tight coupling architecture patterns 
 
-The writing style is straightforward, prioritizing minimal effort, but the scale of SAP projects is not small. 
+The writing style is straightforward, prioritizing minimal effort under the tight coupling architecture. However, scale of SAP projects is not small. It's rare for things to end so simply. Priotize the code must be thoroughly tested. 
 
 - Highly dependent on database table definition and system variables like `SY-UNAME` and `SY-DATUM`
 - Direct database tables access with `SELECT` queries
 - Procedural design and programming style instead of domain model style
+
 
 
