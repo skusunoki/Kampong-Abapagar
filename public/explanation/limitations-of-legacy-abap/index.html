@@ -39,7 +39,7 @@ Obsolete language features The ABAP language is also changing with the times, an
 Obsolete technics to make complex programs to separate parts (Modularization) like subroutines, and function modules Obsolete calls like CALL TRANSACTION, CALL METHOD, and CALL DIALOG Internal table definition with WITH HEADER LINE Old style ABAP programmer practices Some of the difficulty in SAP projects comes from the persistence of practices that should have been eliminated in other IT projects.">
   <meta itemprop="datePublished" content="2025-05-11T20:30:53+08:00">
   <meta itemprop="dateModified" content="2025-05-11T20:30:53+08:00">
-  <meta itemprop="wordCount" content="212">
+  <meta itemprop="wordCount" content="211">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Limitations of Legacy ABAP">
   <meta name="twitter:description" content="Definition The term Legacy ABAP is ambiguous. In this site, Legacy ABAP refers to obsolete language features, ABAP programmer practices that are no longer necessary in modern tool sets, and architectures that have been adopted as a necessary evil.
@@ -162,10 +162,11 @@ Obsolete technics to make complex programs to separate parts (Modularization) li
 <li>Commented out dead code</li>
 </ul>
 <h2 id="tight-coupling-architecture-patterns">Tight coupling architecture patterns</h2>
-<p>The writing style is straightforward, prioritizing minimal effort under the tight coupling architecture. However, scale of SAP projects is not small. It&rsquo;s rare for things to end so simply. Priotize the code must be thoroughly tested.</p>
+<p>The code style is straightforward, prioritizing minimal effort under the tight coupling architecture. However, scale of SAP projects is not small. It&rsquo;s rare for things to end so simply. Priotize the code must be thoroughly tested.</p>
 <ul>
-<li>Highly dependent on database table definition and system variables like <code>SY-UNAME</code> and <code>SY-DATUM</code></li>
+<li>Highly dependent on database table definition</li>
 <li>Direct database tables access with <code>SELECT</code> queries</li>
+<li>Direct use of <code>SY-UNAME</code> and <code>SY-DATUM</code></li>
 <li>Procedural design and programming style instead of domain model style</li>
 </ul>
 

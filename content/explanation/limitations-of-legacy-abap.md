@@ -30,10 +30,11 @@ Some of the difficulty in SAP projects comes from the persistence of practices t
 
 ## Tight coupling architecture patterns 
 
-The writing style is straightforward, prioritizing minimal effort under the tight coupling architecture. However, scale of SAP projects is not small. It's rare for things to end so simply. Priotize the code must be thoroughly tested. 
+The code style is straightforward, prioritizing minimal effort under the tight coupling architecture. However, scale of SAP projects is not small. It's rare for things to end so simply. Priotize the code must be thoroughly tested. 
 
-- Highly dependent on database table definition and system variables like `SY-UNAME` and `SY-DATUM`
+- Highly dependent on database table definition
 - Direct database tables access with `SELECT` queries
+- Direct use of `SY-UNAME` and `SY-DATUM`
 - Procedural design and programming style instead of domain model style
 
 

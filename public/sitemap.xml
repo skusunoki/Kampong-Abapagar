@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/Kampong-Abapagar/explanation/limitations-of-legacy-abap/</loc>
+    <lastmod>2025-05-11T20:30:53+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/Kampong-Abapagar/how-to-guides/calculate-sum-from-internal-table/</loc>
     <lastmod>2025-05-11T09:44:32+08:00</lastmod>
   </url><url>
@@ -10,9 +13,6 @@
   </url><url>
     <loc>http://localhost:1313/Kampong-Abapagar/explanation/</loc>
     <lastmod>2025-05-11T20:31:08+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/explanation/limitations-of-legacy-abap/</loc>
-    <lastmod>2025-05-11T20:30:53+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/Kampong-Abapagar/</loc>
     <lastmod>2025-05-11T10:07:30+08:00</lastmod>
