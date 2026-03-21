@@ -2,29 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/Kampong-Abapagar/explanation/limitations-of-legacy-abap/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/explanation/limitations-of-legacy-abap/</loc>
     <lastmod>2025-05-11T20:30:53+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/how-to-guides/calculate-sum-from-internal-table/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/how-to-guides/calculate-sum-from-internal-table/</loc>
     <lastmod>2025-05-11T09:44:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/how-to-guides/calculate-sum-in-multiple-currencies/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/how-to-guides/calculate-sum-in-multiple-currencies/</loc>
     <lastmod>2025-05-11T11:10:31+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/how-to-guides/unit-testing/</loc>
-    <lastmod>2025-05-20T23:02:03+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/explanation/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/explanation/</loc>
     <lastmod>2025-05-11T20:31:08+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/</loc>
     <lastmod>2025-05-11T10:07:30+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/how-to-guides/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/essay/</loc>
     <lastmod>2025-05-11T10:06:41+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/categories/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/how-to-guides/</loc>
+    <lastmod>2025-05-11T10:06:41+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Kampong-Abapagar/tags/</loc>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/abap/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/c&#43;&#43;/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/categories/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/clean-code/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/design-patterns/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/java/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/oop/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/philosophy/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/categories/software-design/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/tags/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://skusunoki.github.io/Kampong-Abapagar/essay/aristotle-oo-design/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url>
 </urlset>

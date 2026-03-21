@@ -2,10 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Kampong-Abapagar Modern ABAP</title>
-    <link>http://localhost:1313/Kampong-Abapagar/tags/</link>
+    <link>https://skusunoki.github.io/Kampong-Abapagar/tags/</link>
     <description>Recent content in Tags on Kampong-Abapagar Modern ABAP</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/Kampong-Abapagar/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://skusunoki.github.io/Kampong-Abapagar/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ABAP</title>
+      <link>https://skusunoki.github.io/Kampong-Abapagar/tags/abap/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://skusunoki.github.io/Kampong-Abapagar/tags/abap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://skusunoki.github.io/Kampong-Abapagar/tags/c&#43;&#43;/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://skusunoki.github.io/Kampong-Abapagar/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Clean Code</title>
+      <link>https://skusunoki.github.io/Kampong-Abapagar/tags/clean-code/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://skusunoki.github.io/Kampong-Abapagar/tags/clean-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design Patterns</title>
+      <link>https://skusunoki.github.io/Kampong-Abapagar/tags/design-patterns/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://skusunoki.github.io/Kampong-Abapagar/tags/design-patterns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://skusunoki.github.io/Kampong-Abapagar/tags/java/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://skusunoki.github.io/Kampong-Abapagar/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OOP</title>
+      <link>https://skusunoki.github.io/Kampong-Abapagar/tags/oop/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://skusunoki.github.io/Kampong-Abapagar/tags/oop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Philosophy</title>
+      <link>https://skusunoki.github.io/Kampong-Abapagar/tags/philosophy/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://skusunoki.github.io/Kampong-Abapagar/tags/philosophy/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

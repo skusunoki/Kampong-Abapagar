@@ -18,11 +18,15 @@
 <link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/android-192x192.png" sizes="192x192">
 
 <title>How to Start Unit Testing | Kampong-Abapagar Modern ABAP</title>
-<meta name="description" content="1st step to do class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. methods t01_1_to_10 for testing. class lycl_fizzbuzz implementation. methods t01_1_to_10. data(lo_fizzbuzz) = new zcl_fizzbuzz( ). data(lt_fizzbuzz_act) = lo_fizzbuzz( )-&gt;generate_fizzbuzz( 10 ). data(lt_fizzbuzz_exp) = value #( ( number = 1 result = &#39;&#39; ) ( number = 2 result = &#39;&#39; ) ( number = 3 result = &#39;fizz&#39; ) ( number = 4 result = &#39;&#39; ) ( number = 5 result = &#39;buzz&#39; ) ( number = 6 result = &#39;fizz&#39; ) ( number = 7 result = &#39;&#39; ) ( numebr = 8 result = &#39;&#39; ) ( number = 9 result = &#39;fizz&#39; ) ( number = 10 result = &#39;buzz&#39; ) ). cl_abap_unit=&gt;assert_equals( exp = lt_fizzbuzz_act act = lt_fizzbuzz_exp ). endmethod. endclass.">
+<meta name="description" content="1st step to do First, create a test class.
+class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. This defines a local test class for unit testing. The FOR TESTING addition marks it as a test class. RISK LEVEL HARMLESS indicates the test won’t modify production data, and DURATION SHORT means the test should complete quickly (under 60 seconds).
+methods t01_1_to_10 for testing. This declares a test method within the test class. The FOR TESTING addition identifies this method as an actual test case that will be executed by the ABAP Unit framework. The method name t01_1_to_10 suggests it’s testing numbers 1 to 10.">
 <meta property="og:url" content="http://localhost:1313/Kampong-Abapagar/how-to-guides/unit-testing/">
   <meta property="og:site_name" content="Kampong-Abapagar Modern ABAP">
   <meta property="og:title" content="How to Start Unit Testing">
-  <meta property="og:description" content="1st step to do class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. methods t01_1_to_10 for testing. class lycl_fizzbuzz implementation. methods t01_1_to_10. data(lo_fizzbuzz) = new zcl_fizzbuzz( ). data(lt_fizzbuzz_act) = lo_fizzbuzz( )-&gt;generate_fizzbuzz( 10 ). data(lt_fizzbuzz_exp) = value #( ( number = 1 result = &#39;&#39; ) ( number = 2 result = &#39;&#39; ) ( number = 3 result = &#39;fizz&#39; ) ( number = 4 result = &#39;&#39; ) ( number = 5 result = &#39;buzz&#39; ) ( number = 6 result = &#39;fizz&#39; ) ( number = 7 result = &#39;&#39; ) ( numebr = 8 result = &#39;&#39; ) ( number = 9 result = &#39;fizz&#39; ) ( number = 10 result = &#39;buzz&#39; ) ). cl_abap_unit=&gt;assert_equals( exp = lt_fizzbuzz_act act = lt_fizzbuzz_exp ). endmethod. endclass.">
+  <meta property="og:description" content="1st step to do First, create a test class.
+class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. This defines a local test class for unit testing. The FOR TESTING addition marks it as a test class. RISK LEVEL HARMLESS indicates the test won’t modify production data, and DURATION SHORT means the test should complete quickly (under 60 seconds).
+methods t01_1_to_10 for testing. This declares a test method within the test class. The FOR TESTING addition identifies this method as an actual test case that will be executed by the ABAP Unit framework. The method name t01_1_to_10 suggests it’s testing numbers 1 to 10.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="how-to-guides">
@@ -30,13 +34,17 @@
     <meta property="article:modified_time" content="2025-05-20T23:02:03+08:00">
 
   <meta itemprop="name" content="How to Start Unit Testing">
-  <meta itemprop="description" content="1st step to do class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. methods t01_1_to_10 for testing. class lycl_fizzbuzz implementation. methods t01_1_to_10. data(lo_fizzbuzz) = new zcl_fizzbuzz( ). data(lt_fizzbuzz_act) = lo_fizzbuzz( )-&gt;generate_fizzbuzz( 10 ). data(lt_fizzbuzz_exp) = value #( ( number = 1 result = &#39;&#39; ) ( number = 2 result = &#39;&#39; ) ( number = 3 result = &#39;fizz&#39; ) ( number = 4 result = &#39;&#39; ) ( number = 5 result = &#39;buzz&#39; ) ( number = 6 result = &#39;fizz&#39; ) ( number = 7 result = &#39;&#39; ) ( numebr = 8 result = &#39;&#39; ) ( number = 9 result = &#39;fizz&#39; ) ( number = 10 result = &#39;buzz&#39; ) ). cl_abap_unit=&gt;assert_equals( exp = lt_fizzbuzz_act act = lt_fizzbuzz_exp ). endmethod. endclass.">
+  <meta itemprop="description" content="1st step to do First, create a test class.
+class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. This defines a local test class for unit testing. The FOR TESTING addition marks it as a test class. RISK LEVEL HARMLESS indicates the test won’t modify production data, and DURATION SHORT means the test should complete quickly (under 60 seconds).
+methods t01_1_to_10 for testing. This declares a test method within the test class. The FOR TESTING addition identifies this method as an actual test case that will be executed by the ABAP Unit framework. The method name t01_1_to_10 suggests it’s testing numbers 1 to 10.">
   <meta itemprop="datePublished" content="2025-05-20T23:02:03+08:00">
   <meta itemprop="dateModified" content="2025-05-20T23:02:03+08:00">
-  <meta itemprop="wordCount" content="130">
+  <meta itemprop="wordCount" content="289">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="How to Start Unit Testing">
-  <meta name="twitter:description" content="1st step to do class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. methods t01_1_to_10 for testing. class lycl_fizzbuzz implementation. methods t01_1_to_10. data(lo_fizzbuzz) = new zcl_fizzbuzz( ). data(lt_fizzbuzz_act) = lo_fizzbuzz( )-&gt;generate_fizzbuzz( 10 ). data(lt_fizzbuzz_exp) = value #( ( number = 1 result = &#39;&#39; ) ( number = 2 result = &#39;&#39; ) ( number = 3 result = &#39;fizz&#39; ) ( number = 4 result = &#39;&#39; ) ( number = 5 result = &#39;buzz&#39; ) ( number = 6 result = &#39;fizz&#39; ) ( number = 7 result = &#39;&#39; ) ( numebr = 8 result = &#39;&#39; ) ( number = 9 result = &#39;fizz&#39; ) ( number = 10 result = &#39;buzz&#39; ) ). cl_abap_unit=&gt;assert_equals( exp = lt_fizzbuzz_act act = lt_fizzbuzz_exp ). endmethod. endclass.">
+  <meta name="twitter:description" content="1st step to do First, create a test class.
+class lycl_fizzbuzz definition for testing risk level harmless duration short. endclass. This defines a local test class for unit testing. The FOR TESTING addition marks it as a test class. RISK LEVEL HARMLESS indicates the test won’t modify production data, and DURATION SHORT means the test should complete quickly (under 60 seconds).
+methods t01_1_to_10 for testing. This declares a test method within the test class. The FOR TESTING addition identifies this method as an actual test case that will be executed by the ABAP Unit framework. The method name t01_1_to_10 suggests it’s testing numbers 1 to 10.">
 <link href="/Kampong-Abapagar/scss/main.css" rel="stylesheet">
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -136,10 +144,13 @@
 		
 </header>
 	<h2 id="1st-step-to-do">1st step to do</h2>
+<p>First, create a test class.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> lycl_fizzbuzz <span style="color:#66d9ef">definition</span> <span style="color:#66d9ef">for</span> testing risk level harmless duration short.
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">endclass</span>.
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span>    <span style="color:#66d9ef">methods</span> t01_1_to_10 <span style="color:#66d9ef">for</span> testing.
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> lycl_fizzbuzz <span style="color:#66d9ef">implementation</span>.
+</span></span></code></pre></div><p>This defines a local test class for unit testing. The <code>FOR TESTING</code> addition marks it as a test class. <code>RISK LEVEL HARMLESS</code> indicates the test won&rsquo;t modify production data, and <code>DURATION SHORT</code> means the test should complete quickly (under 60 seconds).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span>    <span style="color:#66d9ef">methods</span> t01_1_to_10 <span style="color:#66d9ef">for</span> testing.
+</span></span></code></pre></div><p>This declares a test method within the test class. The <code>FOR TESTING</code> addition identifies this method as an actual test case that will be executed by the ABAP Unit framework. The method name <code>t01_1_to_10</code> suggests it&rsquo;s testing numbers 1 to 10.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> lycl_fizzbuzz <span style="color:#66d9ef">implementation</span>.
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">methods</span> t01_1_to_10.
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">data</span>(lo_fizzbuzz) <span style="color:#f92672">=</span> new zcl_fizzbuzz( ).
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">data</span>(lt_fizzbuzz_act) <span style="color:#f92672">=</span> lo_fizzbuzz( )<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">generate_fizzbuzz</span>( <span style="color:#ae81ff">10</span> ).
@@ -150,7 +161,7 @@
 </span></span><span style="display:flex;"><span>                                         ( <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;buzz&#39;</span> )
 </span></span><span style="display:flex;"><span>                                         ( <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span> result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fizz&#39;</span> )
 </span></span><span style="display:flex;"><span>                                         ( <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span> result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span> ) 
-</span></span><span style="display:flex;"><span>                                         ( numebr <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span> result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span> )
+</span></span><span style="display:flex;"><span>                                         ( <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span> result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span> )
 </span></span><span style="display:flex;"><span>                                         ( <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span> result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fizz&#39;</span> )
 </span></span><span style="display:flex;"><span>                                         ( <span style="color:#66d9ef">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;buzz&#39;</span> )
 </span></span><span style="display:flex;"><span>        ).
@@ -159,7 +170,14 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">endmethod</span>.
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">endclass</span>.
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>This is the implementation of the test method. It follows the typical &ldquo;Arrange-Act-Assert&rdquo; pattern:</p>
+<ul>
+<li><strong>Arrange</strong>: Creates an instance of the <code>ZCL_FIZZBUZZ</code> class</li>
+<li><strong>Act</strong>: Calls the <code>generate_fizzbuzz( 10 )</code> method to get actual results</li>
+<li><strong>Assert</strong>: Defines expected results using the VALUE constructor and compares them with actual results using <code>cl_abap_unit_assert=&gt;assert_equals()</code></li>
+</ul>
+<p>The test validates the FizzBuzz logic where multiples of 3 return &lsquo;fizz&rsquo;, multiples of 5 return &lsquo;buzz&rsquo;, and other numbers return empty strings.</p>
+
 	
 </div>
 

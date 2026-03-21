@@ -1,0 +1,407 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/Kampong-Abapagar/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/Kampong-Abapagar/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/Kampong-Abapagar/favicons/android-192x192.png" sizes="192x192">
+
+<title>What Would Aristotle Think of Your Code? | Kampong-Abapagar Modern ABAP</title>
+<meta name="description" content="Starting from Uncle Bob&#39;s &#39;Interface Considered Harmful&#39;, this post reinterprets OO concepts through Aristotle&#39;s Four Causes — and concludes that SAP accidentally implemented Aristotle.">
+<meta property="og:url" content="https://skusunoki.github.io/Kampong-Abapagar/essay/aristotle-oo-design/">
+  <meta property="og:site_name" content="Kampong-Abapagar Modern ABAP">
+  <meta property="og:title" content="What Would Aristotle Think of Your Code?">
+  <meta property="og:description" content="Starting from Uncle Bob&#39;s &#39;Interface Considered Harmful&#39;, this post reinterprets OO concepts through Aristotle&#39;s Four Causes — and concludes that SAP accidentally implemented Aristotle.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="essay">
+    <meta property="article:published_time" content="2025-03-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-21T00:00:00+00:00">
+    <meta property="article:tag" content="OOP">
+    <meta property="article:tag" content="Philosophy">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="ABAP">
+    <meta property="article:tag" content="Design Patterns">
+
+  <meta itemprop="name" content="What Would Aristotle Think of Your Code?">
+  <meta itemprop="description" content="Starting from Uncle Bob&#39;s &#39;Interface Considered Harmful&#39;, this post reinterprets OO concepts through Aristotle&#39;s Four Causes — and concludes that SAP accidentally implemented Aristotle.">
+  <meta itemprop="datePublished" content="2025-03-21T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-21T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2154">
+  <meta itemprop="keywords" content="OOP,Philosophy,Java,C&#43;&#43;,ABAP,Design Patterns,Clean Code">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What Would Aristotle Think of Your Code?">
+  <meta name="twitter:description" content="Starting from Uncle Bob&#39;s &#39;Interface Considered Harmful&#39;, this post reinterprets OO concepts through Aristotle&#39;s Four Causes — and concludes that SAP accidentally implemented Aristotle.">
+<link rel="preload" href="/Kampong-Abapagar/scss/main.scss" as="style" integrity="" crossorigin="anonymous">
+<link href="/Kampong-Abapagar/scss/main.scss" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/Kampong-Abapagar/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">Kampong-Abapagar Modern ABAP</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <p>Let&rsquo;s be honest. Most of us have never read Aristotle. We&rsquo;ve been too busy arguing about whether tabs or spaces are the one true path to enlightenment. But bear with me for a few minutes, because it turns out that a Greek philosopher who died in 322 BC had some surprisingly useful things to say about object-oriented design — and, inadvertently, about why Uncle Bob got one argument slightly wrong.</p>
+<p>The journey begins, as so many great software debates do, with a blog post.</p>
+<hr>
+<h2 id="1-uncle-bob-walks-into-a-blog-post">1. Uncle Bob Walks Into a Blog Post</h2>
+<p>In January 2015, Robert C. Martin — affectionately known as Uncle Bob, less affectionately known as the reason your team has a 200-line style guide — published a piece titled <a href="https://blog.cleancoder.com/uncle-bob/2015/01/08/InterfaceConsideredHarmful.html">&lsquo;Interface Considered Harmful&rsquo;</a>.</p>
+<p>His argument, delivered in his trademark Socratic dialogue style, goes roughly like this:</p>
+<blockquote>
+<p>The Java <code>interface</code> keyword exists only because the language designers were too lazy to implement proper multiple inheritance. C++ already solved the Diamond Problem decades ago. Therefore, <code>interface</code> is a hack, and if you could just inherit from multiple concrete classes, you wouldn&rsquo;t need it.</p></blockquote>
+<p>To illustrate, he uses the Observer pattern. In Java, if you want a widget that is also observable, you&rsquo;re stuck: you can <code>extend Widget</code> or you can hold a <code>Subject</code> by composition and write boring delegation code. You can&rsquo;t do both cleanly. In C++, you simply write:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// C++ — clean, direct, expressive
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObservableWidget</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> Widget, <span style="color:#66d9ef">public</span> Subject {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Widget concerns here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Observer concerns here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Separation of concerns: preserved
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><p>Uncle Bob&rsquo;s verdict: the <code>interface</code> keyword is harmful. Guilty. Sentence: deprecated.</p>
+<p>This is a compelling argument. It is also, I will argue, about 70% correct — which in software debates is practically a landslide.</p>
+<hr>
+<h2 id="2-enter-aristotle-surprisingly-punctual">2. Enter Aristotle (Surprisingly Punctual)</h2>
+<p>Aristotle proposed that any thing — a statue, a rainstorm, a moderately well-designed microservice — can be explained by four causes. Not causes in the modern billiard-ball sense, but four distinct types of explanatory answer to the question &ldquo;why does this exist?&rdquo;</p>
+<table>
+  <thead>
+      <tr>
+          <th>Cause</th>
+          <th>Aristotle&rsquo;s term</th>
+          <th>The marble statue analogy</th>
+          <th>In your codebase</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Material Cause</td>
+          <td>Hylē (ὕλη)</td>
+          <td>The marble itself</td>
+          <td>Abstract base class (<code>XxxBase</code>)</td>
+      </tr>
+      <tr>
+          <td>Formal Cause</td>
+          <td>Morphē (μορφή)</td>
+          <td>The sculptor&rsquo;s design</td>
+          <td>Concrete class</td>
+      </tr>
+      <tr>
+          <td>Efficient Cause</td>
+          <td>Kinesis (κίνησις)</td>
+          <td>The sculptor&rsquo;s act of carving</td>
+          <td>Constructor / Factory</td>
+      </tr>
+      <tr>
+          <td>Final Cause</td>
+          <td>Telos (τέλος)</td>
+          <td>The beauty the statue is meant to embody</td>
+          <td>Interface</td>
+      </tr>
+  </tbody>
+</table>
+<p>A framework gives you marble. You inherit it, shape it into a concrete class, wire it together with a factory, and the whole thing is oriented towards an interface — a declaration of purpose, a commitment to a contract, a <em>telos</em>.</p>
+<p>If that sounds a bit grand for a Tuesday afternoon coding session, good. It should. You&rsquo;re not just writing classes. You&rsquo;re participating in a very ancient conversation about what things are and why they exist.</p>
+<hr>
+<h2 id="3-the-interface-is-not-an-externally-imposed-prison-its-an-internally-chosen-destiny">3. The Interface is Not an Externally Imposed Prison. It&rsquo;s an Internally Chosen Destiny.</h2>
+<p>Uncle Bob&rsquo;s critique implicitly treats the interface as something imposed from outside — a bureaucratic contract that a class is forced to sign. But look at who actually does the declaring:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Java</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObservableWidget</span> <span style="color:#66d9ef">extends</span> WidgetBase
+</span></span><span style="display:flex;"><span>                       <span style="color:#66d9ef">implements</span> IObservable {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ObservableWidget reaches OUT to IObservable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// and says: I embody this purpose.</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#75715e">* ABAP</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CLASS</span> zcl_observable_widget <span style="color:#66d9ef">DEFINITION</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">INHERITING FROM</span> zcl_widget_base.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PUBLIC SECTION</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">INTERFACES</span> zif_observable.  <span style="color:#75715e">&#34; Same gesture — I choose this telos
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ENDCLASS</span>.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// C++ — uniform syntax, no distinction
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObservableWidget</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> WidgetBase,   <span style="color:#75715e">// material
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                         <span style="color:#66d9ef">public</span> IObservable {  <span style="color:#75715e">// telos
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Both look identical. Philosophy weeps.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><p>The implementing class <em>reaches out</em> to the interface. It is an act of commitment, not submission. The widget declares: &ldquo;I will be observable. This is my purpose.&rdquo;</p>
+<p>In Aristotelian terms: the telos is not external to the thing — it is immanent within it. The acorn does not have &ldquo;become an oak tree&rdquo; imposed on it from outside. That <em>is</em> what an acorn is for. An acorn that refuses to become a tree is not a rebel. It is a failed acorn.</p>
+<blockquote>
+<p><strong>The philosophical punchline:</strong> The <code>interface</code> keyword, whatever its historical origin, encodes a philosophically important distinction — the difference between <em>receiving material</em> (<code>extends</code> / <code>INHERITING FROM</code>) and <em>committing to a purpose</em> (<code>implements</code> / <code>INTERFACES</code>). C++ erases this distinction with a single colon. Java and ABAP preserve it.</p></blockquote>
+<hr>
+<h2 id="4-is-a-is-a-lie-and-your-type-system-knows-it">4. Is-A Is a Lie (And Your Type System Knows It)</h2>
+<p>The standard story of inheritance is: <code>Dog extends Animal</code> because a dog IS-A animal. Classification. Taxonomy. Linnaean hierarchy in your IDE.</p>
+<p>This story produces the Square-Rectangle problem, which has been reliably causing arguments at whiteboard interviews since approximately 1995.</p>
+<blockquote>
+<p>A square is a special case of a rectangle. So <code>Rectangle</code> should be the parent class. But wait — a rectangle has two independent side lengths; a square has one. The child class has <em>fewer</em> degrees of freedom than the parent. The hierarchy is backwards. Congratulations, your taxonomy has broken your type system.</p></blockquote>
+<p>The fix is to stop thinking about inheritance as classification and start thinking about it as <strong>material succession</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Java — inheritance as material, not taxonomy</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QuadrilateralBase</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// raw material: four sides, four angles</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Rectangle</span> <span style="color:#66d9ef">extends</span> QuadrilateralBase { ... }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Square</span>    <span style="color:#66d9ef">extends</span> QuadrilateralBase { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rectangle is NOT a kind of Square.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Rectangle is MADE FROM the material of QuadrilateralBase.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The constructor (Efficient Cause) validates the shape.</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#75715e">* ABAP — same principle</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CLASS</span> zcl_quadrilateral_base <span style="color:#66d9ef">DEFINITION</span> <span style="color:#66d9ef">ABSTRACT</span>.
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&#34; raw material: four sides
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ENDCLASS</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CLASS</span> zcl_rectangle <span style="color:#66d9ef">DEFINITION</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">INHERITING FROM</span> zcl_quadrilateral_base.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PUBLIC SECTION</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">METHODS</span> constructor
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">IMPORTING</span> iv_width  <span style="color:#66d9ef">TYPE </span>decfloat16
+</span></span><span style="display:flex;"><span>                iv_height <span style="color:#66d9ef">TYPE </span>decfloat16.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENDCLASS</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CLASS</span> zcl_square <span style="color:#66d9ef">DEFINITION</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">INHERITING FROM</span> zcl_quadrilateral_base.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PUBLIC SECTION</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">METHODS</span> constructor
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">IMPORTING</span> iv_side <span style="color:#66d9ef">TYPE </span>decfloat16.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENDCLASS</span>.
+</span></span></code></pre></div><p>Under this view, <em>type</em> — in the strong, semantic sense — belongs to interfaces, not to class hierarchies. <code>IHasArea</code> is a type. <code>IResizable</code> is a type. <code>Rectangle</code> is a material fact about implementation, not a type commitment.</p>
+<p>This is, incidentally, why value objects are so satisfying to write. A value object like <code>Length</code> or <code>Money</code> makes a complete commitment: it implements an interface (<em>telos</em>), it is shaped by a constructor that validates it (<em>efficient cause</em>), and it never changes — because it has already fully achieved its purpose. In Aristotelian terms, a value object is pure actuality — no residual potentiality. Aristotle called this state <em>entelecheia</em>, and reserved it for God. In software, we just call it immutable.</p>
+<hr>
+<h2 id="5-naming-things-the-xxxbase-convention">5. Naming Things: The <code>XxxBase</code> Convention</h2>
+<p>If abstract classes are material (Hylē), they deserve a name that reflects their role as substrate. The community has various conventions:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Convention</th>
+          <th>Example</th>
+          <th>Problem</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Abstract</code> prefix</td>
+          <td><code>AbstractWidget</code></td>
+          <td>Redundant — everyone knows it&rsquo;s abstract</td>
+      </tr>
+      <tr>
+          <td><code>Template</code> suffix</td>
+          <td><code>WidgetTemplate</code></td>
+          <td>Confused with the Template Method pattern</td>
+      </tr>
+      <tr>
+          <td><code>Hyle</code> suffix</td>
+          <td><code>WidgetHyle</code></td>
+          <td>Philosophically perfect. Practically unemployable.</td>
+      </tr>
+      <tr>
+          <td><code>Base</code> suffix</td>
+          <td><code>WidgetBase</code></td>
+          <td>Concise, material connotation, no false associations ✓</td>
+      </tr>
+  </tbody>
+</table>
+<p><code>WidgetBase</code> wins. It says: <em>this is the foundation</em>. The uncarved block. The marble before the sculptor arrives. Concrete classes inherit from it, shape it, and commit to their interfaces.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Java</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WidgetBase</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> LoggerBase logger;   <span style="color:#75715e">// aggregated material</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> ConfigBase config;   <span style="color:#75715e">// aggregated material</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConcreteButton</span> <span style="color:#66d9ef">extends</span> WidgetBase <span style="color:#66d9ef">implements</span> IClickable, IObservable {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Material: from WidgetBase</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Telos:    IClickable, IObservable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Shape:    ConcreteButton</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-abap" data-lang="abap"><span style="display:flex;"><span><span style="color:#75715e">* ABAP</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CLASS</span> zcl_widget_base <span style="color:#66d9ef">DEFINITION</span> <span style="color:#66d9ef">ABSTRACT</span>.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PROTECTED SECTION</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">DATA</span> mo_logger <span style="color:#66d9ef">TYPE REF TO</span> zcl_logger_base.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">DATA</span> mo_config <span style="color:#66d9ef">TYPE REF TO</span> zcl_config_base.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENDCLASS</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CLASS</span> zcl_concrete_button <span style="color:#66d9ef">DEFINITION</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">INHERITING FROM</span> zcl_widget_base.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PUBLIC SECTION</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">INTERFACES</span> zif_clickable.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">INTERFACES</span> zif_observable.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENDCLASS</span>.
+</span></span></code></pre></div><hr>
+<h2 id="6-what-about-uncle-bobs-combinatorial-explosion-objection">6. What About Uncle Bob&rsquo;s Combinatorial Explosion Objection?</h2>
+<p>When I proposed the <code>XxxBase</code> pattern, Uncle Bob (in my imagination, which is where most of my best arguments happen) immediately objected: &ldquo;But if you need Widget+Logger, Widget+Database, and Widget+Logger+Database, you&rsquo;ll need three separate base classes. Combinatorial explosion!&rdquo;</p>
+<p>This is a fair point. It is also, upon examination, equally fatal to multiple inheritance:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// C++ — combinatorial explosion happens here too
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WidgetWithLogger</span>      <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> WidgetBase, <span style="color:#66d9ef">public</span> LoggerBase { };
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WidgetWithDB</span>          <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> WidgetBase, <span style="color:#66d9ef">public</span> DatabaseBase { };
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WidgetWithLoggerAndDB</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> WidgetBase, <span style="color:#66d9ef">public</span> LoggerBase, <span style="color:#66d9ef">public</span> DatabaseBase { };
+</span></span></code></pre></div><p>The explosion is a design smell regardless of mechanism. The answer is not to choose a different inheritance strategy; it is to ask why your widget needs to know about databases in the first place. (Spoiler: it probably doesn&rsquo;t. That&rsquo;s what dependency injection is for.)</p>
+<p>Refactoring eliminates unnecessary combinations. What remains is a small, stable set of base classes that are reused freely. The <code>XxxBase</code> pattern does not cause the explosion; it merely makes it <em>visible</em>, which is the first step towards fixing it.</p>
+<hr>
+<h2 id="7-javas-default-methods-the-serpent-in-the-garden">7. Java&rsquo;s Default Methods: The Serpent in the Garden</h2>
+<p>Java 8 introduced <code>default</code> methods in interfaces. Suddenly, an interface could contain implementation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Java 8 — the telos starts doing the morphē&#39;s job</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IObservable</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">subscribe</span>(Observer o);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// A default method. Convenient. Philosophically unsettling.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">subscribeAll</span>(List<span style="color:#f92672">&lt;</span>Observer<span style="color:#f92672">&gt;</span> observers) {
+</span></span><span style="display:flex;"><span>        observers.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">this</span>::subscribe);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>From our Aristotelian perspective, this is a category error: the Final Cause is doing the Formal Cause&rsquo;s job. The purpose-definer is becoming the shape-giver. The god is doing the sculptor&rsquo;s work.</p>
+<p>The motivation was legitimate: backward compatibility. Once an interface is a public API used by thousands of implementors worldwide, adding a new method without a default would break everything. This is not a laziness problem. It is an <em>ownership and versioning</em> problem that persists regardless of how much AI assistance you have.</p>
+<p>Nevertheless, the philosophical verdict stands: <code>default</code> methods are a necessary evil at the platform layer, and a genuine evil at the application layer.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Layer</th>
+          <th>Default methods</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Language / JDK / ABAP kernel</td>
+          <td>Permitted</td>
+          <td>Backward compatibility of public APIs</td>
+      </tr>
+      <tr>
+          <td>Shared platform / framework team</td>
+          <td>Permitted for cross-cutting concerns only</td>
+          <td>Security, telemetry, tracing</td>
+      </tr>
+      <tr>
+          <td>Domain interfaces (application)</td>
+          <td><strong>Prohibited</strong></td>
+          <td>Interfaces must remain pure telos</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>ABAP note:</strong> ABAP interfaces do not support default implementations at all. What looks like a limitation is, from our framework, a virtue. SAP accidentally enforced philosophical purity.</p></blockquote>
+<hr>
+<h2 id="8-the-verdict-uncle-bob-was-70-right">8. The Verdict: Uncle Bob Was 70% Right</h2>
+<p>Let us render judgment.</p>
+<p><strong>Uncle Bob&rsquo;s correct claims:</strong></p>
+<ul>
+<li>✅ The Diamond Problem was solved long before Java was born.</li>
+<li>✅ Multiple class inheritance would have enabled cleaner composition in many cases.</li>
+<li>✅ Delegation boilerplate is genuinely annoying.</li>
+</ul>
+<p><strong>Uncle Bob&rsquo;s overcorrection:</strong></p>
+<ul>
+<li>❌ The <code>interface</code> keyword encodes a philosophically important distinction — between material succession and teleological commitment — that C++&rsquo;s uniform colon syntax erases.</li>
+<li>❌ Java&rsquo;s <code>extends</code>/<code>implements</code> and ABAP&rsquo;s <code>INHERITING FROM</code>/<code>INTERFACES</code> accidentally preserve this distinction at the syntactic level.</li>
+<li>❌ The correct fix would have been: allow multiple class inheritance <em>and</em> keep the <code>interface</code> keyword.</li>
+</ul>
+<blockquote>
+<p>A good prosecutor does not acquit the guilty by convicting the innocent. The <code>interface</code> keyword is innocent. The prohibition of multiple class inheritance is the guilty party.</p></blockquote>
+<hr>
+<h2 id="9-summary-the-four-causes-in-three-languages">9. Summary: The Four Causes in Three Languages</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Cause</th>
+          <th>Role</th>
+          <th>Java</th>
+          <th>ABAP</th>
+          <th>C++</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Hylē (Material)</td>
+          <td><code>XxxBase</code> — substrate</td>
+          <td><code>abstract class XxxBase</code></td>
+          <td><code>CLASS ... ABSTRACT.</code></td>
+          <td>abstract base class</td>
+      </tr>
+      <tr>
+          <td>Morphē (Formal)</td>
+          <td>Concrete class</td>
+          <td><code>class Xxx extends XxxBase</code></td>
+          <td><code>INHERITING FROM</code></td>
+          <td><code>class Xxx : public XxxBase</code></td>
+      </tr>
+      <tr>
+          <td>Kinesis (Efficient)</td>
+          <td>Constructor / Factory</td>
+          <td><code>new Xxx()</code> / Factory</td>
+          <td><code>NEW zcl_xxx( )</code></td>
+          <td><code>make_unique&lt;Xxx&gt;()</code></td>
+      </tr>
+      <tr>
+          <td>Telos (Final)</td>
+          <td>Interface — purpose</td>
+          <td><code>implements IXxx</code></td>
+          <td><code>INTERFACES zif_xxx.</code></td>
+          <td><code>: public IXxx</code></td>
+      </tr>
+      <tr>
+          <td>Entelecheia</td>
+          <td>Value object — telos = morphē</td>
+          <td><code>final</code> + immutable</td>
+          <td><code>FINAL CREATE PRIVATE</code></td>
+          <td><code>const</code> value type</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="10-conclusion-you-are-more-than-a-craftsman">10. Conclusion: You Are More Than a Craftsman</h2>
+<p>There is a view of programming that treats it as mere craft: you take requirements, you produce working software, you go home. Clean Code is about writing tidy craft. Design patterns are reusable craft templates. SOLID is a checklist for responsible craft.</p>
+<p>This view is not wrong. It is just incomplete.</p>
+<p>When you sit down to design an interface — not to implement it, but to <em>design</em> it — you enter a different mode. You are asking: what is this thing <em>for</em>? What is its essential purpose, stripped of all accidental implementation detail? You are not crafting; you are <em>legislating</em>. You are not making something; you are defining what it <em>means</em> to be something.</p>
+<p>That is the act Aristotle called <em>telos</em>. That is what the <code>interface</code> keyword, in all its allegedly harmful simplicity, is trying to capture.</p>
+<p>Uncle Bob was right that the Diamond Problem is solved. He was right that delegation boilerplate is tedious. But he was wrong to conclude that the interface should be abolished. The interface is not the problem. The interface is the closest thing your type system has to philosophy.</p>
+<p><em>Aristotle would have written clean interfaces. He might even have used ABAP. (He did, after all, believe in the importance of proper categories.)</em></p>
+<hr>
+<h2 id="afterword-a-note-on-abap">Afterword: A Note on ABAP</h2>
+<p>ABAP programmers are sometimes told, with a mixture of pity and condescension, that their language is behind the times. No multiple inheritance. No generics until relatively recently. No lambda expressions until ABAP 7.4.</p>
+<p>From the framework developed in this post, ABAP&rsquo;s constraints look rather different. The mandatory separation of <code>INHERITING FROM</code> (material) and <code>INTERFACES</code> (telos) is not a limitation — it is enforced philosophical discipline. The absence of default interface implementations is not backwardness — it is purity.</p>
+<p>SAP did not read Aristotle. But they accidentally implemented him.</p>
+
+      </main>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/Kampong-Abapagar/js/main.min.705f9cf88971353b26d1856a80c926c88437491360b2e679053360ac942e613b.js" integrity="sha256-cF&#43;c&#43;IlxNTsm0YVqgMkmyIQ3SRNgsuZ5BTNgrJQuYTs=" crossorigin="anonymous"></script>
+<script defer src="/Kampong-Abapagar/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js" integrity="sha256-c0eKfUgHaYrtfjVesj&#43;YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin="anonymous"></script>
+<script src='/Kampong-Abapagar/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
