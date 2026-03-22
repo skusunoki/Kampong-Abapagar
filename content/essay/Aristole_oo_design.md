@@ -153,6 +153,14 @@ Under this view, *type* — in the strong, semantic sense — belongs to interfa
 
 This is, incidentally, why value objects are so satisfying to write. A value object like `Length` or `Money` makes a complete commitment: it implements an interface (*telos*), it is shaped by a constructor that validates it (*efficient cause*), and it never changes — because it has already fully achieved its purpose. In Aristotelian terms, a value object is pure actuality — no residual potentiality. Aristotle called this state *entelecheia*, and reserved it for God. In software, we just call it immutable.
 
+The Square-Rectangle problem was popularized as a canonical LSP 
+violation by Robert C. Martin in *Agile Software Development* 
+(2002), Chapter 10. The counter-argument — that squares *are* 
+a subset of rectangles, and therefore Rectangle should inherit 
+from Square — appears in Bertrand Meyer's *Object-Oriented 
+Software Construction* (2nd ed., 1997). Our reframing here 
+(inheritance as material succession rather than classification) 
+is intended to dissolve the debate, not adjudicate it.
 ---
 
 ## 5. Naming Things: The `XxxBase` Convention
