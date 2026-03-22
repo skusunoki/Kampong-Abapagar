@@ -157,10 +157,25 @@ Under this view, *type* — in the strong, semantic sense — belongs to interfa
 
 This is, incidentally, why value objects are so satisfying to write. A value object like `Length` or `Money` makes a complete commitment: it implements an interface (*telos*), it is shaped by a constructor that validates it (*efficient cause*), and it never changes — because it has already fully achieved its purpose. In Aristotelian terms, a value object is pure actuality — no residual potentiality. Aristotle called this state *entelecheia*, and reserved it for God. In software, we just call it immutable.
 
-The Square-Rectangle problem is a canonical example of LSP violation[^martin2002][^wikipedia],
-first formalized by Liskov and Wing[^liskov1994]. Cook et al. established
-that inheritance and subtyping are orthogonal relations[^cook1990] — a result
-this essay converges with, though by a different route.
+The Square-Rectangle problem has been discussed extensively in the literature[^wikipedia].
+Meyer proposed that `Square` should inherit from `Rectangle` on the grounds that
+a square *is-a* rectangle in the mathematical sense[^meyer1997], while Martin argued
+that this violates the Liskov Substitution Principle — first formalized by Liskov
+and Wing[^liskov1994] from Liskov's 1987 keynote[^liskov1987] — and proposed
+reversing the hierarchy[^martin2002]. Harmse examined both positions and concluded
+that neither is satisfactory, arriving at the `Quadrilateral` base class solution[^harmse2015].
+
+The deeper issue, established formally by Cook, Hill, and Canning, is that
+inheritance and subtyping are orthogonal relations — a class can inherit from
+another without being a behavioral subtype of it[^cook1990]. The present essay
+converges with that result, though by a different route: rather than asking
+*which* class should sit above the other, it reframes inheritance itself as
+material succession (Hylē) rather than taxonomic classification, dissolving
+the debate rather than adjudicating it.
+
+Uncle Bob's 2015 post on interfaces, which opened this essay, sits in the
+same tradition of questioning what inheritance is actually *for*[^unclebob2015].
+
 
 [^martin2002]: Robert C. Martin, *Agile Software Development: Principles,
 Patterns, and Practices*, Prentice Hall, 2002. Chapter 10: LSP.
