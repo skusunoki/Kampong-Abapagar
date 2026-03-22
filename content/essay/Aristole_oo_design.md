@@ -157,10 +157,6 @@ Under this view, *type* — in the strong, semantic sense — belongs to interfa
 
 This is, incidentally, why value objects are so satisfying to write. A value object like `Length` or `Money` makes a complete commitment: it implements an interface (*telos*), it is shaped by a constructor that validates it (*efficient cause*), and it never changes — because it has already fully achieved its purpose. In Aristotelian terms, a value object is pure actuality — no residual potentiality. Aristotle called this state *entelecheia*, and reserved it for God. In software, we just call it immutable.
 
-The Square-Rectangle problem was popularized as a canonical LSP violation
-by Robert C. Martin[^martin2002], while Bertrand Meyer took the opposing
-view in his foundational text[^meyer1997].
-
 The Square-Rectangle problem is a canonical example of LSP violation[^martin2002][^wikipedia],
 first formalized by Liskov and Wing[^liskov1994]. Cook et al. established
 that inheritance and subtyping are orthogonal relations[^cook1990] — a result
