@@ -161,12 +161,31 @@ The Square-Rectangle problem was popularized as a canonical LSP violation
 by Robert C. Martin[^martin2002], while Bertrand Meyer took the opposing
 view in his foundational text[^meyer1997].
 
+The Square-Rectangle problem is a canonical example of LSP violation[^martin2002][^wikipedia],
+first formalized by Liskov and Wing[^liskov1994]. Cook et al. established
+that inheritance and subtyping are orthogonal relations[^cook1990] — a result
+this essay converges with, though by a different route.
+
 [^martin2002]: Robert C. Martin, *Agile Software Development: Principles,
 Patterns, and Practices*, Prentice Hall, 2002. Chapter 10: LSP.
 
 [^meyer1997]: Bertrand Meyer, *Object-Oriented Software Construction*,
 2nd ed., Prentice Hall, 1997.
 
+[^liskov1987]: Barbara Liskov, "Data Abstraction and Hierarchy", *SIGPLAN Notices*, 23(5), 1988. (Keynote address, OOPSLA 1987)
+
+[^liskov1994]: Barbara H. Liskov and Jeannette M. Wing, "A Behavioral Notion of Subtyping", *ACM Transactions on Programming Languages and Systems*, 16(6), pp. 1811–1841, 1994.
+
+
+[^meyer1997]: Bertrand Meyer, *Object-Oriented Software Construction*, 2nd ed., Prentice Hall, 1997. Chapter on inheritance misuse ("convenience inheritance").
+
+[^cook1990]: William R. Cook, Walter L. Hill, and Peter S. Canning, "Inheritance Is Not Subtyping", *Proceedings of the 17th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL)*, pp. 125–135, 1990.
+
+[^harmse2015]: Henriette Harmse, "The Rectangle/Square Controversy", 2015. https://henrietteharmse.com/2015/04/18/the-rectanglesquare-controversy/
+
+[^wikipedia]: "Circle–ellipse problem", *Wikipedia*. https://en.wikipedia.org/wiki/Circle%E2%80%93ellipse_problem
+
+[^unclebob2015]: Robert C. Martin, "Interface Considered Harmful", *The Clean Coder Blog*, January 2015. https://blog.cleancoder.com/uncle-bob/2015/01/08/InterfaceConsideredHarmful.html
 ---
 
 ## 5. Naming Things: The `XxxBase` Convention
