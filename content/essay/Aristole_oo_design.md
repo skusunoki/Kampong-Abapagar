@@ -17,7 +17,11 @@ description: "Starting from Uncle Bob's 'Interface Considered Harmful', this pos
 slug: "aristotle-oo-design"
 ---
 
-Let's be honest. Most of us have never read Aristotle. We've been too busy arguing about whether tabs or spaces are the one true path to enlightenment. But bear with me for a few minutes, because it turns out that a Greek philosopher who died in 322 BC had some surprisingly useful things to say about object-oriented design — and, inadvertently, about why Uncle Bob got one argument slightly wrong. The journey begins, as so many great software debates do, with a blog post.
+# What Would Aristotle Think of Your Code?
+
+Let's be honest. Most of us have never read Aristotle. We've been too busy arguing about whether tabs or spaces are the one true path to enlightenment. But bear with me for a few minutes, because it turns out that a Greek philosopher who died in 322 BC had some surprisingly useful things to say about object-oriented design — and, inadvertently, about why Uncle Bob got one argument slightly wrong. 
+
+The journey begins, as so many great software debates do, with a blog post.
 
 ---
 
