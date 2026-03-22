@@ -7,6 +7,7 @@ description = "A hands-on guide to ABAP Unit Testing — covering local test cla
 tags = ["ABAP", "Unit Testing", "SAP", "TDD", "Dependency Injection", "Clean Code"]
 categories = ["Development", "Testing"]
 author = "Your Name"
+weight = 20
 +++
 
 Unit testing in ABAP is your safety net when modifying or refactoring business-critical SAP code. This guide covers everything you need to write effective, isolated tests — from local class syntax to dependency injection patterns and the factory approach.
