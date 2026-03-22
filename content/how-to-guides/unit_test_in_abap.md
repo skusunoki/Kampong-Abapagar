@@ -7,6 +7,7 @@ description = "A hands-on guide to ABAP Unit Testing — covering local test cla
 tags = ["ABAP", "Unit Testing", "SAP", "TDD", "Dependency Injection", "Clean Code"]
 categories = ["Development", "Testing"]
 author = "Your Name"
+type = "docs"
 weight = 20
 +++
 
