@@ -161,6 +161,7 @@ from Square — appears in Bertrand Meyer's *Object-Oriented
 Software Construction* (2nd ed., 1997). Our reframing here 
 (inheritance as material succession rather than classification) 
 is intended to dissolve the debate, not adjudicate it.
+
 ---
 
 ## 5. Naming Things: The `XxxBase` Convention
