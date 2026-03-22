@@ -1,4 +1,4 @@
----
++++
 title: "What Would Aristotle Think of Your Code?"
 subtitle: "A Philosophical Defence of the Interface — and a Gentle Rebuttal of Uncle Bob"
 date: 2025-03-21
@@ -15,7 +15,7 @@ categories:
   - Software Design
 description: "Starting from Uncle Bob's 'Interface Considered Harmful', this post reinterprets OO concepts through Aristotle's Four Causes — and concludes that SAP accidentally implemented Aristotle."
 slug: "aristotle-oo-design"
----
++++
 
 ## What Would Aristotle Think of Your Code?
 
