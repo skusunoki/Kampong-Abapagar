@@ -1,23 +1,25 @@
 +++
-title: "What Would Aristotle Think of Your Code?"
-subtitle: "A Philosophical Defence of the Interface — and a Gentle Rebuttal of Uncle Bob"
-date: 2025-03-21
-draft: false
-tags:
-  - OOP
-  - Philosophy
-  - Java
-  - "C++"
-  - ABAP
-  - Design Patterns
-  - Clean Code
-categories:
-  - Software Design
-description: "Starting from Uncle Bob's 'Interface Considered Harmful', this post reinterprets OO concepts through Aristotle's Four Causes — and concludes that SAP accidentally implemented Aristotle."
-slug: "aristotle-oo-design"
+title = "What Would Aristotle Think of Your Code?"
+subtitle = "A Philosophical Defence of the Interface — and a Gentle Rebuttal of Uncle Bob"
+date  = 2025-03-21
+draft = false
+tags = [
+"OOP",
+"Philosophy",
+"Java",
+"C++",
+"ABAP",
+"Design Patterns","Clean Code"
+]
+categories = "Software Design"
+description = "Starting from Uncle Bob's 'Interface Considered Harmful', this post reinterprets OO concepts through Aristotle's Four Causes — and concludes that SAP accidentally implemented Aristotle."
+slug = "aristotle-oo-design"
+type = "docs"
+weight = 20
 +++
 
 ## What Would Aristotle Think of Your Code?
+
 
 Let's be honest. Most of us have never read Aristotle. We've been too busy arguing about whether tabs or spaces are the one true path to enlightenment. But bear with me for a few minutes, because it turns out that a Greek philosopher who died in 322 BC had some surprisingly useful things to say about object-oriented design — and, inadvertently, about why Uncle Bob got one argument slightly wrong. 
 
